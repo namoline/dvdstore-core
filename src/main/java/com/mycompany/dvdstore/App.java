@@ -1,5 +1,6 @@
 package com.mycompany.dvdstore;
 
+import com.mycompany.dvdstore.controller.MovieController;
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.service.MovieService;
 
@@ -15,19 +16,7 @@ public class App
     {
 
         //System.out.println( "Hello World!" );
-        System.out.println( "Quel est le titre du film?" );
-        Scanner sc= new Scanner(System.in);
-        String titre= sc.nextLine();
-
-        System.out.println( "Quel est le genre du film?" );
-        Scanner sc1= new Scanner(System.in);
-        String genre= sc1.nextLine();
-
-        Movie movie= new Movie();
-        movie.setGenre(genre);
-        movie.setTitle(titre);
-
-        MovieService movieService= new MovieService();
-        movieService.registerMovie(movie);
+        MovieController movieController = new MovieController();
+        movieController.addUsingConsole();
     }
 }
