@@ -6,8 +6,18 @@ import com.mycompany.dvdstore.service.MovieServiceInterface;
 import java.util.Scanner;
 
 public class MovieController {
+    public MovieServiceInterface getMovieService() {
+        return movieService;
+    }
+
+    public void setMovieService(MovieServiceInterface movieService) {
+        this.movieService = movieService;
+    }
+
     //MovieService movieService= new MovieService();
     MovieServiceInterface movieService;
+
+
     public void addUsingConsole(){
         System.out.println( "Quel est le titre du film?" );
         Scanner sc= new Scanner(System.in);
