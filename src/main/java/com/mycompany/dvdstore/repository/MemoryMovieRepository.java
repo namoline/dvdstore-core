@@ -4,7 +4,7 @@ import com.mycompany.dvdstore.entity.Movie;
 import java.util.List;
 import java.util.ArrayList;
 
-public class MovieRepository implements MovieRepositoryInterface{
+public class MemoryMovieRepository implements MovieRepositoryInterface{
 
     public final static List<Movie> movies= new ArrayList<>();
 

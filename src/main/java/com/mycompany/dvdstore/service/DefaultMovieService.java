@@ -4,7 +4,7 @@ import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
 
 
-public class MovieService implements MovieServiceInterface{
+public class DefaultMovieService implements MovieServiceInterface{
 
     public MovieRepositoryInterface getMovieRepository() {
         return movieRepository;
