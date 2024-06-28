@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="fileMovieRepository" class="com.mycompany.dvdstore.repository.FileMovieRepository"/>
+    <bean id="fileMovieRepository" class="com.mycompany.dvdstore.repository.FileMovieRepository">
+        <property name="fichier" value="C:\\temp\\movies.csv"/>
+    </bean>
 
     <bean id="defaultMovieService" class="com.mycompany.dvdstore.service.DefaultMovieService">
         <property name="movieRepository" ref ="fileMovieRepository"/>
