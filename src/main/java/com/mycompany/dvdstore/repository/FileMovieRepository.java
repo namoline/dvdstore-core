@@ -1,6 +1,7 @@
 package com.mycompany.dvdstore.repository;
 
 import com.mycompany.dvdstore.entity.Movie;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,6 +12,8 @@ import java.io.IOException;
 public class FileMovieRepository implements MovieRepositoryInterface {
 
     public final static List<Movie> movies= new ArrayList<>();
+
+    @Value("${movies.file.location}")
     private File fichier;
     public void add(Movie movie){
         FileWriter writer;

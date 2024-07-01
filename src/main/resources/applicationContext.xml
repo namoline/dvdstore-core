@@ -9,9 +9,10 @@
 
 
     <context:annotation-config/>
+    <context:property-placeholder location="classpath:application.properties"/>
 
     <bean id="fileMovieRepository" class="com.mycompany.dvdstore.repository.FileMovieRepository">
-        <property name="fichier" value="C:\\temp\\movies.csv"/>
+
     </bean>
 
     <bean id="defaultMovieService" class="com.mycompany.dvdstore.service.DefaultMovieService">
