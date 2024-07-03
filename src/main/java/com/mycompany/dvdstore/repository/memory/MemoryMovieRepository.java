@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.ArrayList;
 
-@Repository
+//@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     public final static List<Movie> movies= new ArrayList<>();
