@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class DefaultMovieService implements MovieServiceInterface{
 
+
     public MovieRepositoryInterface getMovieRepository() {
         return movieRepository;
     }

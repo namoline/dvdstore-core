@@ -22,10 +22,16 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     @Value("${movies.file.location}")
     private File fichier;
     public void add(Movie movie){
+        long lastId=list().stream().map(Movie::getId).max(Long::compare).orElse(0L);
+        movie.setId(lastId+1);
+
         FileWriter writer;
+
         try{
             writer=new FileWriter(fichier,true);
-            writer.write(movie.getTitle()+";"+movie.getGenre()+"\n");
+
+            writer.write(movie.getId()+";"+movie.getTitle()+";"+movie.getGenre()+";"+movie.getDescription()+"\n");
+
             writer.close();
         }
         catch (IOException e){
@@ -72,12 +78,14 @@ public class FileMovieRepository implements MovieRepositoryInterface {
             for(String line; (line = br.readLine()) != null; ) {
 
                 final String[] allProperties = line.split("\\;");
-                final long nextMovieId=Long.parseLong(allProperties[0]);
-                if (nextMovieId==id) {
-                    movie.setTitle(allProperties[1]);
-                    movie.setGenre(allProperties[2]);
-                    movie.setDescription(allProperties[3]);
-                    return movie;
+                if(allProperties[0]!="") {
+                    final long nextMovieId = Long.parseLong(allProperties[0]);
+                    if (nextMovieId == id) {
+                        movie.setTitle(allProperties[1]);
+                        movie.setGenre(allProperties[2]);
+                        movie.setDescription(allProperties[3]);
+                        return movie;
+                    }
                 }
             }
         } catch (FileNotFoundException e) {

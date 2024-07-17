@@ -7,4 +7,5 @@ public interface MovieServiceInterface {
     public void registerMovie(Movie movie);
     public List<Movie> getMovieList();
     public Movie getMovieById(long id);
+
 }
