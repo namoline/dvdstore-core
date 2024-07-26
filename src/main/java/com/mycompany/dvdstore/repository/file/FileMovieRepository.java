@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
-@Repository
+//@Repository
 public class FileMovieRepository implements MovieRepositoryInterface {
 
     public final static List<Movie> movies= new ArrayList<>();
